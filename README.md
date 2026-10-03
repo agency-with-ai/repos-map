@@ -2,6 +2,11 @@
 
 Working files for investigating repositories and comparing agent answers.
 
+```sh
+git clone https://github.com/agency-with-ai/repos-map.git
+cd repos-map
+```
+
 | Path | Contents |
 | --- | --- |
 | `compare-agents.sh` | The CLI comparison script. |
