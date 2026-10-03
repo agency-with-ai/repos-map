@@ -2,11 +2,6 @@
 
 A workspace for investigating repositories and deciding what fits your project.
 
-```sh
-git clone https://github.com/agency-with-ai/repos-map.git
-cd repos-map
-```
-
 | Path | Contents |
 | --- | --- |
 | `compare-agents.sh` | Runs two Claude sessions in parallel |
