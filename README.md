@@ -1,6 +1,6 @@
 # Repos Map
 
-Working files for [Lab 4](https://agencyai.mit.edu/lab4/).
+Working files for investigating repositories and comparing agent answers.
 
 | Path | Contents |
 | --- | --- |
