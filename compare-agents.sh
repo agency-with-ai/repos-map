@@ -1,19 +1,18 @@
 #!/usr/bin/env bash
 # Licensed under CC BY-SA 4.0. See LICENSE.
-# Usage: bash compare-agents.sh REPO_PATH_OR_GITHUB_URL MODEL QUESTION_FILE
+# Usage: bash compare-agents.sh REPO_PATH_OR_GITHUB_URL MODEL "QUESTION"
 set -euo pipefail
 
 if [[ $# != 3 ]]; then
-  echo "Usage: bash $0 REPO_PATH_OR_GITHUB_URL MODEL QUESTION_FILE" >&2
+  echo "Usage: bash $0 REPO_PATH_OR_GITHUB_URL MODEL \"QUESTION\"" >&2
   exit 2
 fi
 command -v claude >/dev/null || { echo "Install and sign in to Claude Code first." >&2; exit 1; }
 starter=$(cd "$(dirname "$0")" && pwd -P)
 target=$1
 model=$2
-question_file=$3
-question=$(cat "$question_file")
-[[ -n $question ]] || { echo "The question file is empty." >&2; exit 1; }
+question=$3
+[[ -n $question ]] || { echo "The question is empty." >&2; exit 1; }
 
 # GitHub URLs get a clone under repos/. Local paths use the existing clone.
 if [[ $target == https://github.com/* ]]; then
