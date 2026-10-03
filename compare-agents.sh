@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Licensed under CC BY-SA 4.0. See LICENSE.
+# SPDX-License-Identifier: MIT
 # Usage: bash compare-agents.sh REPO_PATH_OR_GITHUB_URL MODEL "QUESTION"
 set -euo pipefail
 

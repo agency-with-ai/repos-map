@@ -9,4 +9,4 @@ Working files for investigating repositories and comparing agent answers.
 | `notes/` | Questions, comparisons, and project decisions. |
 | `results/` | Agent answers and run measurements. |
 
-See [LICENSE](LICENSE). Cloned repositories keep their own licenses.
+Licensed under [MIT](LICENSE). Cloned repositories keep their own licenses.
