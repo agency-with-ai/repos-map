@@ -1,6 +1,6 @@
 # Repos Map
 
-Compare agents' answers about a repository and keep the evidence together.
+A workspace for investigating repositories and deciding what fits your project.
 
 ```sh
 git clone https://github.com/agency-with-ai/repos-map.git
