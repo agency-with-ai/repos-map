@@ -1,17 +1,22 @@
 #!/usr/bin/env bash
 # SPDX-License-Identifier: MIT
-# Usage: bash compare-agents.sh REPO_PATH_OR_GITHUB_URL MODEL "QUESTION"
+# Usage: bash compare-agents.sh REPO_PATH_OR_GITHUB_URL [MODEL] "QUESTION"
 set -euo pipefail
 
-if [[ $# != 3 ]]; then
-  echo "Usage: bash $0 REPO_PATH_OR_GITHUB_URL MODEL \"QUESTION\"" >&2
+if [[ $# != 2 && $# != 3 ]]; then
+  echo "Usage: bash $0 REPO_PATH_OR_GITHUB_URL [MODEL] \"QUESTION\"" >&2
   exit 2
 fi
 command -v claude >/dev/null || { echo "Install and sign in to Claude Code first." >&2; exit 1; }
 starter=$(cd "$(dirname "$0")" && pwd -P)
 target=$1
-model=$2
-question=$3
+if [[ $# == 3 ]]; then
+  model=$2
+  question=$3
+else
+  model=claude-opus-5-5
+  question=$2
+fi
 [[ -n $question ]] || { echo "The question is empty." >&2; exit 1; }
 
 # GitHub URLs get a clone under repos/. Local paths use the existing clone.

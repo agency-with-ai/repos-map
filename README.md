@@ -10,4 +10,12 @@ A workspace for investigating repositories and deciding what fits your project.
 | `notes/` | Your findings and project decisions |
 | `results/` | Answers, token usage, elapsed time, and cost estimates |
 
+Run a comparison with Opus 5.5 at medium effort:
+
+```sh
+bash compare-agents.sh repos/<candidate> "What does this repository do? Cite local files."
+```
+
+To choose another model, add its name between the repository path and the question.
+
 Licensed under [MIT](LICENSE). Cloned repositories keep their own licenses.
