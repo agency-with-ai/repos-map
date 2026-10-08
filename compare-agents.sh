@@ -56,9 +56,10 @@ echo "Saving results to $results"
 run_agent() {
   local number=$1 started finished status=0
   started=$(date +%s)
-  # Each invocation starts a fresh conversation with only reading tools.
+  # Each invocation starts a fresh conversation with only reading tools, at medium effort.
   claude -p "$question" \
     --model "$model" \
+    --effort medium \
     --tools 'Read,Glob,Grep' \
     --allowedTools 'Read,Glob,Grep' \
     --permission-mode dontAsk \
