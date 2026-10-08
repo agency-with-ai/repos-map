@@ -62,6 +62,7 @@ run_agent() {
   local number=$1 started finished status=0
   started=$(date +%s)
   # Each invocation starts a fresh conversation with only reading tools, at medium effort.
+  # Load only user settings, skipping project settings; disable hooks and MCP servers.
   claude -p "$question" \
     --model "$model" \
     --effort medium \
